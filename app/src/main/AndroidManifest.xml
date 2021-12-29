@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.speedpayprojet">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SpeedPayProjet">
+        <activity
+            android:name=".Sucesso"
+            android:exported="false" />
+        <activity
+            android:name=".InserirChaveTransferencia"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEnviarDinheiroSpeed"
+            android:exported="false" />
+        <activity
+            android:name=".TelaConfiguracoes"
+            android:exported="false" />
+        <activity
+            android:name=".GerarQRCodeTransferencia"
+            android:exported="false" />
+        <activity
+            android:name=".GerarChaveTransferencia"
+            android:exported="false" />
+        <activity
+            android:name=".TelaOpcaoReceber"
+            android:exported="false" />
+        <activity
+            android:name=".TelaReceberDinheiro"
+            android:exported="false" />
+        <activity
+            android:name=".TelaHistorico"
+            android:exported="false" />
+        <activity
+            android:name=".TelaCarteira"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLogin"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRegistrar"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLoginRegisto"
+            android:exported="false" />
+        <activity
+            android:name=".TelaInicial"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
