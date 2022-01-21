@@ -25,16 +25,21 @@ public class TelaReceberDinheiro extends AppCompatActivity {
     public void irTelaOpcaoReceber(View View){
         Intent intent = new Intent(this, TelaOpcaoReceber.class);
         //TODO e possivel tomar o valor logo como int
-        String valor= editText.getText().toString();
 
-        if( checkValue(Integer.parseInt(valor))){
-            //Todo como enviar INtente para outro activity
-            String chave=getChave();
-            startActivity(intent);
-        }else{
+
+            String valor= editText.getText().toString();
+        if (!valor.equals("")) {
+            if (checkValue(Integer.parseInt(valor))) {
+                //Todo como enviar INtente para outro activity
+                String chave = getChave();
+                startActivity(intent);
+            } else {
+                alert("valor invalido");
+            }
+
+        }else {
             alert("valor invalido");
         }
-
     }
 
     private String getChave() {
