@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "623508310057",
+    "project_id": "speedpay-dc932",
+    "storage_bucket": "speedpay-dc932.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623508310057:android:1caa94cd72ec46a5363438",
+        "android_client_info": {
+          "package_name": "com.example.speedpayprojet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623508310057-nvk73ipoov0rq0n2gmt8ij3v02mb1g6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2EenGNiWbGxAkmh7Vzc7J_hJGGqnasD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623508310057-nvk73ipoov0rq0n2gmt8ij3v02mb1g6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
