@@ -30,6 +30,8 @@ public class ConfirmarAutenticasao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmar_autenticasao);
         iniciliarConponentes();
+        String valor= getIntent().getStringExtra("valor");
+        txtvarlor.setText(valor+"$00");
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

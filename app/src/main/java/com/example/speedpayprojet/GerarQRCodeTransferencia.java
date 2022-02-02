@@ -19,6 +19,9 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 public class GerarQRCodeTransferencia extends AppCompatActivity {
     ImageView ivQRCode;
     TextView txtView;
+    private String valor;
+    private String chave;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -27,8 +30,8 @@ public class GerarQRCodeTransferencia extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         iniciliarConponentes();
-        String chave=getIntent().getStringExtra("chavetrans");
-        String valor=getIntent().getStringExtra("valortrans");
+        chave=getIntent().getStringExtra("chavetrans");
+        valor=getIntent().getStringExtra("valortrans");
 
         txtView.setText(valor+"$00");
 
@@ -51,6 +54,8 @@ public class GerarQRCodeTransferencia extends AppCompatActivity {
     }
     public void irTelaAnterior (View View){
         Intent intent = new Intent(this, TelaOpcaoReceber.class);
+        intent.putExtra("valortrans",String.valueOf(valor));
+        intent.putExtra("chavetrans",String.valueOf(chave));
         startActivity(intent);
     }
 

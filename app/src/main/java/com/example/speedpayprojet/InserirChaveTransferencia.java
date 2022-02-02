@@ -32,8 +32,10 @@ public class InserirChaveTransferencia extends AppCompatActivity {
         Intent intent = new Intent(this, TelaEnviarDinheiroSpeed.class);
         startActivity(intent);
     }
-    public void irTelaAutenticasao (View View){
+    public void irTelaAutenticasao (int valor){
+
         Intent intent = new Intent(this,ConfirmarAutenticasao.class);
+        intent.putExtra("valor",String.valueOf(valor));
         startActivity(intent);
     }
 }
