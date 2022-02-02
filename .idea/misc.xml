@@ -3,12 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_forgot_password.xml" value="0.5" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_gerar_chave_transferencia.xml" value="0.33" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_gerar_qrcode_transferencia.xml" value="0.33" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_inserir_chave_transferencia.xml" value="0.33" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_profile.xml" value="0.3625" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_sucesso.xml" value="0.22" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_tela_carteira.xml" value="0.33" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_tela_configuracoes.xml" value="0.33" />
@@ -20,10 +18,21 @@
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_tela_login.xml" value="0.25" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_tela_login_registo.xml" value="0.25" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_tela_opcao_receber.xml" value="0.33" />
-        <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_tela_registrar.xml" value="0.33" />
+        <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/activity_tela_registrar.xml" value="0.22" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/fragment_first.xml" value="0.17426545086119555" />
         <entry key="..\:/Users/K3NNY/AndroidStudioProjects/SpeedPayProjet/app/src/main/res/layout/fragment_second.xml" value="0.17426545086119555" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_confirmar_autenticasao.xml" value="0.25" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_gerar_chave_transferencia.xml" value="0.1" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_gerar_qrcode_transferencia.xml" value="0.23867753623188406" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_inserir_chave_transferencia.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_main2.xml" value="0.25" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_orientation.xml" value="0.23867753623188406" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_sucesso.xml" value="0.25" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_tela_enviar_dinheiro.xml" value="0.23867753623188406" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_tela_enviar_dinheiro_speed.xml" value="0.23867753623188406" />
         <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_tela_inicial.xml" value="0.25" />
+        <entry key="..\:/Users/hoo_lee_sheet/AndroidStudioProjects/SpeedPayProjectAndroid2/app/src/main/res/layout/activity_tela_login.xml" value="0.23867753623188406" />
       </map>
     </option>
   </component>

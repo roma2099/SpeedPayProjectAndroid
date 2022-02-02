@@ -26,10 +26,12 @@ public class GerarQRCodeTransferencia extends AppCompatActivity {
         setContentView(R.layout.activity_gerar_qrcode_transferencia);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        ///TODO Receber texto Chave da outra Activity ou de o servidor
-        String chave="FxsG365Gx";
-
         iniciliarConponentes();
+        String chave=getIntent().getStringExtra("chavetrans");
+        String valor=getIntent().getStringExtra("valortrans");
+
+        txtView.setText(valor+"$00");
+
         gerarQRCode(chave);
 
         //imageView53
