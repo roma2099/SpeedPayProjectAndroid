@@ -26,6 +26,10 @@ public class GerarChaveTransferencia extends AppCompatActivity {
     }
     public void irTelaAnterior (View View){
         Intent intent = new Intent(this, TelaOpcaoReceber.class);
+        String chave= getIntent().getStringExtra("chavetrans");
+        String valor= getIntent().getStringExtra("valortrans");
+        intent.putExtra("chavetrans",chave);
+        intent.putExtra("valortrans",valor);
         startActivity(intent);
     }
     public void irTelaInicialx (View View){
