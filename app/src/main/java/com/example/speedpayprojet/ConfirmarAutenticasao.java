@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
 import java.util.concurrent.Executor;
 
 public class ConfirmarAutenticasao extends AppCompatActivity {
@@ -32,6 +33,7 @@ public class ConfirmarAutenticasao extends AppCompatActivity {
     TextView txtvarlor;
     String chave;
     DatabaseReference database;
+    DatabaseReference mdatabase;
 
     BiometricPrompt biometricPrompt;
     BiometricPrompt.PromptInfo promptInfo;
@@ -39,6 +41,8 @@ public class ConfirmarAutenticasao extends AppCompatActivity {
     String userID;
     Transasao transasao;
     User userInfo;
+
+    Long money;
 
 
     @Override
@@ -116,22 +120,15 @@ public class ConfirmarAutenticasao extends AppCompatActivity {
             @Override
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
-                Intent intent= new Intent(ConfirmarAutenticasao.this,Sucesso.class);
-                transasao.setIdPagar(userID);
-                transasao.setDone(true);
-                database = FirebaseDatabase.getInstance().getReference("");
+
+                database = FirebaseDatabase.getInstance().getReference("/Users/"+userID+"/money");
 
 
-                database.child("Transasao").child(chave).setValue(transasao).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-
-                    }
-                } );
                 database.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        userInfo=snapshot.getValue(User.class);
+
+                        money=(Long) snapshot.getValue();
 
                     }
 
@@ -140,21 +137,41 @@ public class ConfirmarAutenticasao extends AppCompatActivity {
 
                     }
                 });
-                userInfo.setMoney(userInfo.getMoney()-Long.parseLong(transasao.getValor()));
-                Toast.makeText(getApplicationContext(),""+userInfo.getMoney(),Toast.LENGTH_LONG).show();
-                database.child("User").child(userID).setValue(userInfo).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+                transasao.setIdPagar(userID);
+                transasao.setDone(true);
+                database = FirebaseDatabase.getInstance().getReference("Transasao/"+chave);
+
+                database.setValue(transasao).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Intent intent= new Intent(ConfirmarAutenticasao.this,Sucesso.class);
-                        startActivity(intent);
+                        HashMap hashMap =new HashMap();
+                        hashMap.put("money", money-Long.parseLong(transasao.valor));
+
+
+
+                        mdatabase = FirebaseDatabase.getInstance().getReference("/Users/"+userID);
+                        mdatabase.updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Intent intent = new Intent(ConfirmarAutenticasao.this,Sucesso.class);
+                                startActivity(intent);
+                            }
+                        });
 
                     }
-                } );
-
-                startActivity(intent);
 
 
+                });
 
+
+
+
+
+
+
+                ////userInfo.setMoney(userInfo.getMoney()-Long.parseLong(transasao.getValor()));
+                ////Toast.makeText(getApplicationContext(),"gsgsg"+userInfo.getMoney(),Toast.LENGTH_LONG).show();
             }
 
             @Override
