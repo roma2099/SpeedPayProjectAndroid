@@ -102,7 +102,13 @@ public class GerarQRCodeTransferencia extends AppCompatActivity {
                     mdatabase.updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-
+                            ////Adicionar novo Histoco
+                            Historico historico = new Historico();
+                            historico.saldo=""+(money);
+                            historico.data="14/02/2022";
+                            historico.tipoTransasao="Receber";
+                            historico.valorTrans=""+valor;
+                            addHistorico(historico);
 
                         }
                     });
@@ -149,6 +155,19 @@ public class GerarQRCodeTransferencia extends AppCompatActivity {
     private void iniciliarConponentes(){
         txtView = (TextView) findViewById(R.id.textView47);
         ivQRCode = (ImageView) findViewById(R.id.imageView53);
+
+
+    }
+    public void addHistorico(Historico historico){
+        database = FirebaseDatabase.getInstance().getReference("/Users/"+userID+"/Historico");
+        chave =database.push().getKey();
+        database.child(chave).setValue(historico).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+
+
+            }
+        });
 
     }
 }

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,8 +29,8 @@ import java.util.HashMap;
 import java.util.concurrent.Executor;
 
 public class ConfirmarAutenticasao extends AppCompatActivity {
-    Button btnConfirmar;
-    Button btnCancelar;
+    ImageView btnConfirmar;
+    ImageView btnCancelar;
     TextView txtvarlor;
     String chave;
     DatabaseReference database;
@@ -50,9 +51,11 @@ public class ConfirmarAutenticasao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmar_autenticasao);
         iniciliarConponentes();
+        Toast.makeText(getApplicationContext(),"12345",Toast.LENGTH_LONG).show();
         chave= getIntent().getStringExtra("chavetrans");
+        Toast.makeText(getApplicationContext(),chave,Toast.LENGTH_LONG).show();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        userID="j48hvYWHMBS6kVDUIt8rSxPYeC82qq";
+        ///userID="j48hvYWHMBS6kVDUIt8rSxPYeC82qq";
         if (user != null) {
             userID=user.getUid();
         } else {
@@ -67,7 +70,7 @@ public class ConfirmarAutenticasao extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                  transasao=snapshot.getValue(Transasao.class);
-                 txtvarlor.setText(transasao.getValor());
+                 txtvarlor.setText(transasao.getValor()+"$00");
             }
 
             @Override
@@ -91,8 +94,8 @@ public class ConfirmarAutenticasao extends AppCompatActivity {
 
     }
     private void iniciliarConponentes() {
-        btnCancelar = (Button) findViewById(R.id.button3);
-        btnConfirmar= (Button) findViewById(R.id.button);
+        btnCancelar = (ImageView) findViewById(R.id.button3);
+        btnConfirmar= (ImageView) findViewById(R.id.button);
         txtvarlor = (TextView ) findViewById(R.id.valortextview);
     }
     public void irTelaSucesso (View View){
@@ -154,6 +157,13 @@ public class ConfirmarAutenticasao extends AppCompatActivity {
                         mdatabase.updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
+                                ////Adicionar novo Histoco
+                                Historico historico = new Historico();
+                                historico.saldo=""+(money);
+                                historico.data="14/02/2022";
+                                historico.tipoTransasao="Enviar";
+                                historico.valorTrans=""+transasao.valor;
+                                addHistorico(historico);
                                 Intent intent = new Intent(ConfirmarAutenticasao.this,Sucesso.class);
                                 startActivity(intent);
                             }
@@ -183,6 +193,18 @@ public class ConfirmarAutenticasao extends AppCompatActivity {
         biometricPrompt.authenticate(promptInfo);
 
 
+
+    }
+    public void addHistorico(Historico historico){
+        database = FirebaseDatabase.getInstance().getReference("/Users/"+userID+"/Historico");
+        chave =database.push().getKey();
+        database.child(chave).setValue(historico).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+
+
+            }
+        });
 
     }
 

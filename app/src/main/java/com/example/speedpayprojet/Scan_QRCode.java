@@ -54,6 +54,9 @@ public class Scan_QRCode extends AppCompatActivity {
                     database.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            Intent intent = new Intent(Scan_QRCode.this,ConfirmarAutenticasao.class);
+                            intent.putExtra("chavetrans",chave);
+                            startActivity(intent);
                             irTelaAutenticasao(chave);
                         }
 

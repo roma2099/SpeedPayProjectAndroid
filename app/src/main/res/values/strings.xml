@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SpeedPayProjet</string>
+    <string name="app_name">SpeedPay</string>
     <string name="title_activity_tela_enviar">TelaEnviar</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

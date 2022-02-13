@@ -40,7 +40,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/lady" />
 
-    <TextView
+    C<TextView
         android:id="@+id/textView69"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
